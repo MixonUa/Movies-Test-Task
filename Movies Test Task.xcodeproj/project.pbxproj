@@ -13,6 +13,8 @@
 		8661B8382EC52E5900EF45F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8661B82A2EC52E5900EF45F1 /* AppDelegate.swift */; };
 		8661B8392EC52E5900EF45F1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8661B8312EC52E5900EF45F1 /* SceneDelegate.swift */; };
 		8661B83A2EC52E5900EF45F1 /* NavigationTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8661B8322EC52E5900EF45F1 /* NavigationTabBarController.swift */; };
+		86CDC01F2ECA67F400362934 /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86CDC01E2ECA67F400362934 /* RequestBuilder.swift */; };
+		86CDC0212ECA682900362934 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86CDC0202ECA682900362934 /* NetworkClient.swift */; };
 		86F115812EC5C0C000025BD0 /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F115802EC5C0C000025BD0 /* Resources.swift */; };
 		86F115832EC5C1F500025BD0 /* Tabs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F115822EC5C1F500025BD0 /* Tabs.swift */; };
 		86F115852EC5C24400025BD0 /* NetworkList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F115842EC5C24400025BD0 /* NetworkList.swift */; };
@@ -46,6 +48,8 @@
 		8661B82C2EC52E5900EF45F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8661B8312EC52E5900EF45F1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		8661B8322EC52E5900EF45F1 /* NavigationTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationTabBarController.swift; sourceTree = "<group>"; };
+		86CDC01E2ECA67F400362934 /* RequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBuilder.swift; sourceTree = "<group>"; };
+		86CDC0202ECA682900362934 /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		86F115802EC5C0C000025BD0 /* Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resources.swift; sourceTree = "<group>"; };
 		86F115822EC5C1F500025BD0 /* Tabs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tabs.swift; sourceTree = "<group>"; };
 		86F115842EC5C24400025BD0 /* NetworkList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkList.swift; sourceTree = "<group>"; };
@@ -187,6 +191,8 @@
 		86F115902EC5C6F600025BD0 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				86CDC01E2ECA67F400362934 /* RequestBuilder.swift */,
+				86CDC0202ECA682900362934 /* NetworkClient.swift */,
 				86F115912EC5C70300025BD0 /* NetworkService.swift */,
 				86F115AF2EC6059E00025BD0 /* ImageLoaderService.swift */,
 				86F115BA2EC60B8900025BD0 /* CoreDataService.swift */,
@@ -300,6 +306,7 @@
 				86F115A02EC5F90500025BD0 /* MoviesViewModel.swift in Sources */,
 				8661B8382EC52E5900EF45F1 /* AppDelegate.swift in Sources */,
 				86F115812EC5C0C000025BD0 /* Resources.swift in Sources */,
+				86CDC01F2ECA67F400362934 /* RequestBuilder.swift in Sources */,
 				86F115B72EC60B4800025BD0 /* FavouriteViewModel.swift in Sources */,
 				86F115AE2EC601EA00025BD0 /* MovieCollectionViewCell.swift in Sources */,
 				86F115882EC5C2AE00025BD0 /* String + Extension.swift in Sources */,
@@ -318,6 +325,7 @@
 				86F115BD2EC60D7B00025BD0 /* FavoritesViewController.swift in Sources */,
 				86F115B32EC60AE700025BD0 /* FavoriteMovieTableViewCell.swift in Sources */,
 				8661B83A2EC52E5900EF45F1 /* NavigationTabBarController.swift in Sources */,
+				86CDC0212ECA682900362934 /* NetworkClient.swift in Sources */,
 				86F115C62EC62BAF00025BD0 /* MovieDataModel.xcdatamodeld in Sources */,
 				86F115B92EC60B7500025BD0 /* DBService.swift in Sources */,
 			);

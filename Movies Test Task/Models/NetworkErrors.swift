@@ -9,14 +9,24 @@ import Foundation
 
 enum NetworkError: Error, LocalizedError {
     case invalidURL
-    case invalidResponse
+    case cancelled
+    case badResponse
+    case noData
+    case decodingError
+    
     
     var errorDescription: String? {
         switch self {
         case .invalidURL:
             return "Wrong URL"
-        case .invalidResponse:
-            return "Wrong response"
+        case .cancelled:
+            return "cancelled"
+        case .badResponse:
+            return "Bad response"
+        case .noData:
+            return "No data"
+        case .decodingError:
+            return "Decoding error"
         }
     }
 }

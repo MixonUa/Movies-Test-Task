@@ -12,6 +12,11 @@ class MoviesListViewModel {
     
     private var currentPage = 0
     private var totalPages = 0
+    private let networkService: NetworkService
+      
+    init() {
+          self.networkService = NetworkService()
+      }
     
     private var moviesSubject = CurrentValueSubject<[Movie], Never>([])
     var moviesPublisher: AnyPublisher<[Movie], Never> {
@@ -21,7 +26,7 @@ class MoviesListViewModel {
     
     private func getMoviesList(completion: @escaping (Result<MoviesList, Error>) -> Void) {
         let url = NetList.Urls.baseUrl + NetList.Points.popularMovies
-        NetworkService.fetchData(url: url, parameters: NetList.Keys.parameters, completion: completion)
+        networkService.fetchData(url: url, parameters: NetList.Keys.parameters, completion: completion)
     }
     
     private func appendMovies(_ newMovies: [Movie]) {
@@ -49,7 +54,7 @@ class MoviesListViewModel {
         parameters["page"] = page
         
         let url = NetList.Urls.baseUrl + NetList.Points.popularMovies
-        NetworkService.fetchData(url: url, parameters: parameters, completion: completion)
+        networkService.fetchData(url: url, parameters: parameters, completion: completion)
     }
     
     func fetchData() {
