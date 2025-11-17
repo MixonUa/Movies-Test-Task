@@ -24,6 +24,19 @@ class MovieCollectionViewCell: UICollectionViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         image.image = nil
+        label.text = nil
+        
+        image.cancelImageLoad()
+    }
+    
+    func configure(with movie: Movie){
+        label.text = movie.title
+        
+        if let url = URL(string: NetList.Urls.imageSmallUrl + movie.posterPath) {
+            image.loadImage(from: url, placeholder: Resources.Images.defaultImage)
+        } else {
+            image.image = Resources.Images.defaultImage
+        }
     }
     
     private func setupViews() {
