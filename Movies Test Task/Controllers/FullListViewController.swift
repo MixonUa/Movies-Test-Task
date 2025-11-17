@@ -17,7 +17,6 @@ class FullListViewController: UIViewController {
     
     private var viewModel: MoviesListViewModel
     private var cancellables = Set<AnyCancellable>()
-    
     weak var delegateMovie: MovieDelegate?
     
     private var collectionView: UICollectionView!
@@ -85,13 +84,7 @@ extension FullListViewController: UICollectionViewDelegate, UICollectionViewData
             return UICollectionViewCell()
         }
         
-        cell.label.text = list[indexPath.row].title
-        
-        if let url = URL(string: NetList.Urls.imageBaseUrl + list[indexPath.row].posterPath) {
-            cell.image.loadImage(from: url, placeholder: Resources.Images.defaultImage)
-        } else {
-            cell.image.image = Resources.Images.defaultImage
-        }
+        cell.configure(with: list[indexPath.item])
 
         return cell
     }
@@ -115,11 +108,10 @@ extension FullListViewController: UICollectionViewDelegateFlowLayout {
         return CGSize(width: cellWidth, height: cellWidth * 1.7)
     }
     
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let offsetY = scrollView.contentOffset.y
-        let contentHeight = scrollView.contentSize.height - scrollView.frame.height
-        
-        if offsetY > contentHeight {
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        let triggerIndex = list.count - 1
+
+        if indexPath.item == triggerIndex {
             viewModel.fetchNextPage()
         }
     }
