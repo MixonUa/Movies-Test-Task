@@ -12,6 +12,7 @@ struct NetList {
     struct Urls {
         static let baseUrl = "https://api.themoviedb.org"
         static let imageBaseUrl = "https://image.tmdb.org/t/p/original"
+        static let imageSmallUrl = "https://image.tmdb.org/t/p/w500"
     }
     
     struct Points {
