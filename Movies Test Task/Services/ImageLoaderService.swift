@@ -51,7 +51,6 @@ class ImageLoaderService {
     }
     
     static func loadImage(from url: URL, completion: @escaping (UIImage?) -> Void) {
-            // Залишаємо цей метод для зворотної сумісності (якщо потрібно)
             _ = loadImageTask(from: url, completion: completion)
         }
     
@@ -130,14 +129,13 @@ extension UIImageView {
 
 extension UIImage{
     func resizedToCellSize() -> UIImage {
-            let targetWidth: CGFloat = 600 // Наприклад, 3x від ширини ~200 пунктів
+            let targetWidth: CGFloat = 600
             let scaleFactor = targetWidth / self.size.width
             let targetHeight = self.size.height * scaleFactor
             let newSize = CGSize(width: targetWidth, height: targetHeight)
             
             let rect = CGRect(origin: .zero, size: newSize)
             
-            // Використовуємо UIGraphicsBeginImageContextWithOptions для ресайзу
             UIGraphicsBeginImageContextWithOptions(newSize, false, 1.0)
             self.draw(in: rect)
             let newImage = UIGraphicsGetImageFromCurrentImageContext()
